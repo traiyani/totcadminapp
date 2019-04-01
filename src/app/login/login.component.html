@@ -1,0 +1,38 @@
+<div class="login-page" [@routerTransition]>
+  <div class="row justify-content-md-center">
+    <div class="col-md-4">
+      <img src="assets/images/logo.png" width="150px" class="user-avatar" />
+      <h1>Login</h1>
+      <form role="form" [formGroup]="loginForm">
+        <div class="form-content">
+          <div class="form-group">
+            <input type="text" formControlName="email" class="form-control input-underline input-lg" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+              placeholder="Email" />
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-danger">
+              <div *ngIf="f.email.errors.required">Email is required</div>
+              <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <input type="password" formControlName="password" class="form-control input-underline input-lg" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              placeholder="Password" />
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-danger">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </div>
+          </div>
+        
+        <div class="form-group">
+            <p class="text-right forget-link"><a routerLink="/forgetpassword" class="txt-gray">Forgot password?</a></p>
+        </div>
+        <div class="form-group">
+          <a class="btn rounded-btn" (click)="onSubmit()">{{ 'Log in' | translate }}</a>
+          &nbsp;
+          <a class="btn rounded-btn" [routerLink]="['/signup']">{{ 'Register' | translate }}</a>
+        </div>
+        <div id="login-status"></div>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>

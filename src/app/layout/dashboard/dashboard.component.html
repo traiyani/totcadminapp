@@ -1,0 +1,44 @@
+<div [@routerTransition]>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+            <h2><b>User Details</b></h2>
+          <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
+            <thead>
+              <tr>
+                <th style="width: 20%">
+                  <mfDefaultSorter by="name">UserName</mfDefaultSorter>
+                </th>
+                <th style="width: 50%">
+                  <mfDefaultSorter by="email">UserEmail</mfDefaultSorter>
+                </th>
+                <th style="width: 10%">
+                  <mfDefaultSorter by="age">Age</mfDefaultSorter>
+                </th>
+                <th style="width: 20%">
+                  <mfDefaultSorter by="city">User City</mfDefaultSorter>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of mf.data">
+                <td>{{user.firstname}}</td>
+                <td>{{user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.mobileno }}</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4">
+                  <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

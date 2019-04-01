@@ -1,0 +1,21 @@
+// shared css for the login and signup page
+@import "../login/login.component.scss";
+a{
+    color: #ccc;
+}
+input.is-invalid {
+    border-bottom: 2px solid #dc3545 !important;
+}
+.text-danger {
+    color: #ea4050 !important;
+    text-align: left;
+}
+#verifypwdForm-status {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+a.login-page-link {
+    color: #ccc;
+    font-size: 18px;
+    font-weight: bold;
+}
