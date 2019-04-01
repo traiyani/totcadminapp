@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
         this.http.get(`${environment.API_Path}/AdminAPI/dashboard`, { headers: headers }).pipe(map((res => res.json()))).subscribe(data => {
             this.firstname = data.data.firstname;
             this.lastname = data.data.lastname
-            console.log("Dashboard-Data", data.data);
+            // console.log("Dashboard-Data", data.data);
         });
     }
     }

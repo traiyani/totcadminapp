@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
             };
             // console.log("logindata", loginObj);
             this.http.post(`${environment.API_Path}/AdminAPI/login`, loginObj).pipe(map((res => res.json()))).subscribe(data => {
-                console.log("logindata", data);
+                // console.log("logindata", data);
                 if (data.success == true) {            
                     $("#login-status").html(data.message).css("color", "#1dde1d");
                     this.loginForm.reset();

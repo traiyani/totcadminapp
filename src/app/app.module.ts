@@ -10,8 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthGuard } from './shared';
-import {DataTableModule} from "angular-6-datatable";
+//import { AuthGuard } from './shared';
+import { DataTableModule } from "angular-6-datatable";
 // AoT requires an exported function for factories
 export const createTranslateLoader = (http: HttpClient) => {
     /* for development
@@ -30,7 +30,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         BrowserAnimationsModule,
         HttpClientModule,
         HttpModule,
-        FormsModule, 
+        FormsModule,
         DataTableModule,
         ReactiveFormsModule,
         TranslateModule.forRoot({
@@ -43,7 +43,8 @@ export const createTranslateLoader = (http: HttpClient) => {
         AppRoutingModule
     ],
     declarations: [AppComponent],
-    providers: [AuthGuard,CookieService ],
+    // providers: [AuthGuard,CookieService ],
+    providers: [CookieService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

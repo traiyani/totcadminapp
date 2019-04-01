@@ -55,12 +55,12 @@ export class SignupComponent implements OnInit {
                 "email": formValue.email,
                 "password": formValue.password
             }
-            console.log("RegisternObj", RegisternObj);
+            // console.log("RegisternObj", RegisternObj);
             this.http.post(`${environment.API_Path}/AdminAPI/register`, RegisternObj).subscribe(
                 res => {
-                  console.log("register data", res);
+                //   console.log("register data", res);
                   if (res["success"] == true) {
-                    console.log(res["message"]);
+                    // console.log(res["message"]);
                     $("#registration-status").html(res["message"]).css("color", "#1dde1d");
                     // $("#registration-status").after("<a class='login-link' href='/'>Login Now</a>")
                     this.registerForm.reset();
@@ -69,7 +69,7 @@ export class SignupComponent implements OnInit {
                     }
                   }
                   else {
-                    console.log(res["message"]);
+                    // console.log(res["message"]);
                     $("#registration-status").html(res["message"]).css("color", "#ea4050");
                   }
         

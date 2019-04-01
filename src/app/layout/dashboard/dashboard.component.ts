@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
     }
     getUserData(){
         let AccessToken = localStorage.getItem("token");
-        console.log("AccessToken-Dashboard", AccessToken);
+        // console.log("AccessToken-Dashboard", AccessToken);
         if (AccessToken == '' || AccessToken == null || AccessToken == undefined) {
             this.router.navigate(['/login']);
         }
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
         headers.append('Authorization', AccessToken);
 
         this.http.get(`${environment.API_Path}/AdminAPI/GetRegistractionUserList?pageNo=1&size=10`, { headers: headers }).pipe(map((res => res.json()))).subscribe(data => {
-            console.log("registerUserData",data.data );
+            // console.log("registerUserData",data.data );
             this.data = data.data;
         });
     }
